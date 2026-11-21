@@ -35,6 +35,23 @@
 
 工程由嘉立创EDA专业版 4.1.97 导出为 .epro2 格式。请通过专业版导入工程文件，再查看原理图和PCB。平台网页附件不属于 .epro2 工程导出的内容；原网页附件仍可从上方原项目入口获取。
 
+## 仓库结构
+
+```text
+gh125-cable-tester/
+├── README.md                              # 项目说明（本文件）
+├── LICENSE                                # CERN-OHL-S-2.0 许可正文
+├── NOTICE                                 # 版权、协议标识与来源
+├── SHA256SUMS                             # 设计文件校验值
+├── docs/
+│   └── hardware-guide.md                  # 按位号的器件索引（料号 / 手填值 / 立创编号）
+└── hardware/
+    ├── component-list.csv                 # 嘉立创 EDA 导出的器件清单
+    └── 常用gh125系列接口线序检测.epro2      # 嘉立创 EDA 专业版工程（原理图 + PCB）
+```
+
+`docs/` 放阅读型资料，`hardware/` 放可直接导入、下单的工程与清单；核对校验值可用 `sha256sum -c SHA256SUMS`。
+
 ## 三、复刻与使用
 
 1. 导入工程，核对原理图、PCB版本、器件型号和封装。
@@ -75,3 +92,12 @@ Copyright (C) 2026 mnblzs（东南）
 设计灵感来自月亮管理员小胡的[数据线测试器](https://oshwhub.com/jic-h/shu-ju-xian-ce-shi-qi)，感谢原作者的分享。原项目特别说明：封面焊接的卧插接口为临时展示选择，复刻应结合设计核对立插接口及实际插接方向。
 
 如有参考来源遗漏、表述不妥或权属疑问，欢迎指出具体文件和相关来源，我会认真核实并及时补充或修正。欢迎通过 GitHub Issues 反馈问题、提出改进建议与交流想法，不胜感激。
+
+## 相关仓库
+
+同系列的其他硬件项目，结构、许可与整理方式保持一致：
+
+- [`stm32f4-dev-board`](https://github.com/mnblzs/stm32f4-dev-board) — 2025 赛季步兵机器人 STM32F407 开发板（ME3121 / AMS1117 供电、SN65HVD232D CAN）
+- [`mt6835-magnetic-encoder`](https://github.com/mnblzs/mt6835-magnetic-encoder) — RM25 工程机器人 MT6835 磁编码器模块（STM32F103 采集、CAN 输出）
+- [`usb3-redriver-pi3eqx7502`](https://github.com/mnblzs/usb3-redriver-pi3eqx7502) — USB 3.0 长线中继板（PI3EQX7502，拨码调 EQ / DE）
+- [`solar-car-hardware`](https://github.com/mnblzs/solar-car-hardware) — 2024 工训太阳能小车三板方案（CN3305 充电 / 超级电容储能 / TPS63070 + DRV8837 控制板）
